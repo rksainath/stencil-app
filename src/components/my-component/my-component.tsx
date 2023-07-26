@@ -1,5 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+import { Component, h } from '@stencil/core';
+// import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
@@ -7,26 +7,16 @@ import { format } from '../../utils/utils';
   shadow: true,
 })
 export class MyComponent {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
-
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    const now = new Date();
+    const date = now.toDateString();
+    const time = now.toLocaleTimeString();
+
+    return (
+      <div>
+        <p>Today's date: {date}</p>
+        <p>Current time: {time}</p>
+      </div>
+    );
   }
 }
