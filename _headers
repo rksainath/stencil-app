@@ -1,0 +1,4 @@
+/*
+Access-Control-Allow_Origin: *
+Access-Control-Allow_Headers: Content-Type
+Access-Control-Allow_Methods: GET, POST, PUT, DELETE
